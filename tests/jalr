@@ -1,0 +1,2 @@
+add $t0, $zero, 8
+jarl $t0, $t1

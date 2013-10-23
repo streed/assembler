@@ -1,0 +1,67 @@
+TESTS - 
+
+Tests are handled automatically when the following command is issued.
+
+make test
+./testing
+
+This will run compile the executable with the tests included and it will run as is. If there is an
+error then the executable will exit and show which file and line it failed on.
+
+The following tests are done:
+
+// Tests the list insertion.
+void testListInsert();
+// Tests the list get functionality.
+void testListGet();
+// Tests the replace method.
+void testListReplace();
+// Tests the list with char *
+void testListCharPointer();
+// Tests the addUnique method.
+void testListAddUnique();
+
+// Tests if the parser is able to parse IN correctly.
+void testParserIN();
+// Tests if the parser is able to parse OUT correctly.
+void testParserOUT();
+// Tests if the parser is able to parse BEQ correctly.
+void testParserBEQ();
+// Tests if the parser handles labels correctly.
+void testParserLabel();
+// Tests the preprocessing on the IN instruction when its second param
+// is a variable.
+void testParserSingleRegisterReplacementINX();
+// Tests the preprocessing on the OUT instruction when its second param
+// is a variable.
+void testParserSingleRegisterReplacementOUTX();
+// Tests two register instructions where the second register is a variable.
+void testParserTwoRegisterReplacementX();
+// Tests single variable replace on three register instructions.
+void testParserVariableRegisterReplacementX();
+// Tests double variable replace on three register instructions.
+void testParserVariableRegisterReplacementXY();
+// Tests triple variable replace on three register instructions.
+void testParserVariableRegisterReplacementXYZ();
+// Tests the handling of two register instruction with offset.
+void testParserTwoRegisterReplacementOffset();
+
+The parser tests are grouped into similar instruction constructs. ADD and NAND have similar formats and thus only one is tested. 
+This goes for SW and LW. 
+
+
+RUNNING - 
+
+To compile the parser it self the following is done.
+
+make parser
+./parser <input file>
+
+During execution the following files are made:
+
+<input file>.pre
+<input file>.bin
+
+The .pre file contains the preprocessed assembly code.  This holds the expanded and subtituted assembly.
+The .bin holds the binary code, or hex decimal representation of the assembly code.
+
